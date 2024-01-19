@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODU</title>
+    <link rel="stylesheet" href="hodu.css">
+</head>
+<body>
+<header>
+    <section class="nav">
+        <a id="Logo" href=""><img class="hoduimg" src="Group.png" alt=""></a>
+        <nav class="navigation">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Support</a>
+        </nav>
+            <a class="down" href="" download="">Download</a>
+    </section>
+    <!--        네비게이션 부분 끝!-->
+</header>
+<main>
+    <section class="home-screen">
+        <div class="home-text">
+            <h1 class="title">Lorem Ipsum is simply<br>dummy text of the printing and</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and<br>typesetting industry.<br>
+               Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, when an unknown</p>
+            <a class="down" href="" download="">Download</a>
+        </div>
+        <div class="home-img">
+            <img src="img_cat.png" alt="cat">
+        </div>
+    </section>
+                   <!--        첫번째 홈화면 부분 완료!-->
+    <section class="home-screen2">
+        <img class="home-img2" src="img_4.png" alt="">
+        <div class="content">
+            <h2 class="content-text">Lorem Ipsum is simply<br>dummy text of the printing<br>and dummy text</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. </p>
+        </div>
+    </section>
+                   <!--        두번째 홈화면 부분 완료!-->
+    <section class="post">
+        <article class="post-text">
+             <h2 class="subject">dummy text of the printing and dummy</h2>
+             <p>Lorem Ipsum is simply <span>dummy text</span> of the printing and typesetting industry.<br>
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
+            </article>
+                   <!--            서브 게시글 부분 완료!-->
+        <article class="posts">
+             <img src="img_1.png" alt="">
+             <img src="img_2.png" alt="">
+             <img src="img_3.png" alt="">
+             <img src="img_1 (1).png" alt="">
+             <img src="img_2 (1).png" alt="">
+             <img src="img_3 (1).png" alt="">
+        </article>
+             <h2 class="continue">Continue exploring HODU</h2>
+             <button class="click">show more</button>
+    </section>
+                   <!--        무한 스크롤 부분 완료!-->
+    <hr>
+    <section class="bottom_screen">
+        <h2 class="map_text">Where you’ll be</h2>
+        <p  class="address">330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
+        <div id="map" style="width:1278px;height:520px;"></div>
+        <div class="email_bar">
+             <div>
+                <h2 class="blogpost">Subscribe to our Blog post</h2>
+                <p class="email_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+                    Lorem Ipsum has been the industry's standard dummy text </p>
+             </div>
+             <div class="email">
+                <div class="input-group">
+                     <img src="mail.png"alt="">
+                     <input type="email" alt="" placeholder="Enter your e-mail address" >
+                </div>
+                <button class="click2">Subscribe</button>
+             </div>
+        </div>
+        <article class="main-footer img">
+             <img class="cat2" src="img_5.png" alt="">
+        </article>
+    </section>
+                   <!--        3번째 아래 홈화면 부분 완료!-->
+    </main>
+<footer class="frame">
+    <div>
+       <img class="logo" src="Group%20(1).png" alt="">
+    </div>
+    <nav class="link">
+        <ul>
+           <li><a href=""><img src="Vector.png" alt="blog 이동"></a></li>
+           <li><a href=""><img src="instagram%20(1).png" alt="insta 이동"></a></li>
+           <li><a href=""><img src="Vector%20(1).png" alt="facebook 이동"></a></li>
+           <li><a href=""><img src="youtube.png" alt="youtube 이동"></a></li>
+        </ul>
+    </nav>
+</footer>
+                   <!--    아래바 부분 완료!-->
+
+<div id="modal">
+    <img class="modal_screen" src="background1.png" alt="모달창">
+        <article class="modal-thank_you">
+            <img src="cat%201.png" alt="고양이얼굴">
+            <h2>Thank you!</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing industry. </p>
+            <button class="btn_close_modal">OK! I Love HODU</button>
+        </article>
+</div>
+                    <!--    모달창 완료!-->
+
+<script>
+    const modal = document.getElementById("modal");
+    const btn_open_modal = document.getElementById('.click2');
+    const btn_close_modal = document.getElementById('btn_close_modal');
+
+    btn_open_modal.addEventListener("click",() =>{
+        modal.style.display="flex";
+    btn_close_modal.addEventListener('click',() =>{
+        modal.style.display ='none';
+    });
+
+
+    });
+</script>
+
+                   <!--카카오지도 자바스크립트 부분-->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=901bd7fc2db88ca461fd3bb52ca69be2"></script>
+<script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    // 마커가 표시될 위치입니다
+    var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+</script>
+                   <!--카카오지도 자바스크립트 부분 완료!-->
+<script src="hodu.js"></script>
+</body>
+</html>
