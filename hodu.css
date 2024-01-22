@@ -124,11 +124,10 @@ main .post-text .subject{
     font-size: 48px;
     line-height: 60px;
     color: #D97652;
-    margin: 0 0 40px;
 }
 main .post-text p{
-    margin: 0;
     text-align: center;
+    margin: 40px 0 88px;
 }
 main .post-text span{
     color: #D97652;
@@ -136,8 +135,8 @@ main .post-text span{
 main .posts{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    margin: 88px 322px 100px 320px;
     gap: 72px;
+    margin: 100px;
 }
 main .home-screen2 .home-img2,
 main .posts img{
@@ -159,17 +158,23 @@ main hr{
     width: 1278px;
 
 }
+main .bottom_screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 main .bottom_screen .map_text{
-    margin:68px 0 0 320px;
-    font-size: 36px;
+    transform: translateX(-515px);
+    margin: 60px 0 20px;
 }
 main .bottom_screen .address{
-    margin: 20px 0 0 320px;
     color: #606367;
+    transform: translateX(-445px);
+    margin-bottom: 48px;
 }
 main .bottom_screen #map{
-    margin: 48px 0 80px 320px;
     border-radius: 12px;
+    margin-bottom: 81px;
 }
 main .bottom_screen .email_bar{
     display: flex;
@@ -177,10 +182,10 @@ main .bottom_screen .email_bar{
     z-index: 1;
     align-items: center;
     justify-content: space-between;
-    margin:0 320px;
     padding: 50px 58px 51px 58px;
     background-color: #263140;
     border-radius: 30px;color: white;
+    gap: 163px;
 }
 main .bottom_screen h2{
     margin: 0;
@@ -216,7 +221,7 @@ main .bottom_screen .email input {
 }
 main .bottom_screen .main-footer{
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 main .bottom_screen .cat2{
     position: absolute;
@@ -233,11 +238,13 @@ main .bottom_screen #scroll_top{
     padding: 13px 10px;
     border-radius: 50px;
     border: none;
+    right: -600px;
 }
 .frame{
     display: flex;
-    justify-content: space-between;
-    margin: 0 320px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 826px;
 }
 .frame .logo{
     margin: 45px 0;
