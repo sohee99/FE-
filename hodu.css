@@ -1,81 +1,79 @@
-/*!* reset css *!*/
-/*!* http://meyerweb.com/eric/tools/css/reset/*/
-/*   v2.0 | 20110126*/
-/*   License: none (public domain)*/
-/**!*/
+/* reset css */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-/*html, body, div, span, applet, object, iframe,*/
-/*h1, h2, h3, h4, h5, h6, p, blockquote, pre,*/
-/*a, abbr, acronym, address, big, cite, code,*/
-/*del, dfn, em, img, ins, kbd, q, s, samp,*/
-/*small, strike, strong, sub, sup, tt, var,*/
-/*b, u, i, center,*/
-/*dl, dt, dd, ol, ul, li,*/
-/*fieldset, form, label, legend,*/
-/*table, caption, tbody, tfoot, thead, tr, th, td,*/
-/*article, aside, canvas, details, embed,*/
-/*figure, figcaption, footer, header, hgroup,*/
-/*menu, nav, output, ruby, section, summary,*/
-/*time, mark, audio, video {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    border: 0;*/
-/*    font-size: 100%;*/
-/*    font: inherit;*/
-/*    vertical-align: baseline;*/
-/*}*/
-/*!* HTML5 display-role reset for older browsers *!*/
-/*article, aside, details, figcaption, figure,*/
-/*footer, header, hgroup, menu, nav, section {*/
-/*    display: block;*/
-/*}*/
-/*body {*/
-/*    line-height: 1;*/
-/*}*/
-/*ol, ul {*/
-/*    list-style: none;*/
-/*}*/
-/*blockquote, q {*/
-/*    quotes: none;*/
-/*}*/
-/*blockquote:before, blockquote:after,*/
-/*q:before, q:after {*/
-/*    content: '';*/
-/*    content: none;*/
-/*}*/
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    border-spacing: 0;*/
-/*}*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
-/*!* reset css 끝*!*/
+/* reset css 끝*/
+
 
 body{
-    width: 1920px;
-    margin: 0;
     font-family: Pretendard-Regular;
-    font-size: 16px;
-    line-height: 20px;
-    color: black;
 }
-header section,
+header .nav,
 main .home-screen{
     display: flex;
     align-items: center;
     background: #F2E9D8;
+    justify-content: center;
 }
-header .nav,
 main .home-screen{
-    justify-content: space-between;
+    gap: 170px;
 }
-#Logo .hoduimg{
-    margin: 31px 756px 31px 320px
+header .nav{
+    gap:756px;
+    padding: 31px;
 }
-nav{
+.navigation {
     display: flex;
-    gap:30px;
+    gap: 49px;
 }
-.navigation a{
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.navigation ul a{
     text-decoration: none;
     color: black;
 }
@@ -88,54 +86,34 @@ nav{
     border: 0;
     border-radius: 40px;
     padding: 15px 33px 15px 31px;
-    margin: 26px 320px 26px 49px;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-family: Pretendard-Regular;
-}
-.nav .down{
-    margin: 26px 320px 26px 49px;
-}
-main .home-screen{
-    align-items: flex-start;
-}
-main .home-text{
-    margin: 200px 0 262px 320px
 }
 main .title{
-    margin: 0 0 40px ;
     font-size: 48px;
     line-height: 60px;
 }
-main .home-text p{
-    margin: 0 0 40px;
-    line-height: 20px;
-    width: 420px;
+main .title,
+main .home-screen p{
+    margin-bottom:40px;
 }
-main .home-screen a{
-    display: block;
-    margin: 0;
-}
-main .home-screen .home-img{
-    margin-right: 320px;
-    margin-top: 32px;
+main .home-screen .down{
+    display: inline-block;
 }
 main .home-screen2{
     display: flex;
+    justify-content: center;
+    gap: 110px;
+    align-items: center;
+    margin: 80px 0 120px;
 }
-main .home-screen2 .home-img2{
-    margin: 70px 60px 120px 310px;
-}
-main .home-screen2 .content-text,
-main .bottom_screen h2{
+main .home-screen2 .content-text{
+    display: flex;
+    flex-direction: column;
     font-size: 36px;
     line-height: 45px;
-    margin: 172px 320px 30px 0;
-}
-main .home-screen2 p{
-    margin: 0;
-    line-height: 20px;
+    margin-bottom: 30px;
 }
 main .post{
     display: flex;
@@ -175,14 +153,15 @@ main .post .click{
     margin: 0 0 80px;
     padding: 15px 29px;
     width: 143px;
+    cursor: pointer;
 }
 main hr{
-    margin: 0 322px 0 320px;
-    color: #C4C4C4;
+    width: 1278px;
 
 }
 main .bottom_screen .map_text{
     margin:68px 0 0 320px;
+    font-size: 36px;
 }
 main .bottom_screen .address{
     margin: 20px 0 0 320px;
@@ -190,6 +169,7 @@ main .bottom_screen .address{
 }
 main .bottom_screen #map{
     margin: 48px 0 80px 320px;
+    border-radius: 12px;
 }
 main .bottom_screen .email_bar{
     display: flex;
@@ -204,6 +184,7 @@ main .bottom_screen .email_bar{
 }
 main .bottom_screen h2{
     margin: 0;
+    font-size: 36px;
 }
 main .bottom_screen .email_text{
     font-size: 14px;
@@ -233,18 +214,30 @@ main .bottom_screen .email input {
     border: none;
     color: #767676;
 }
-main .bottom_screen .main-footer img{
+main .bottom_screen .main-footer{
     display: flex;
+    justify-content: right;
+}
+main .bottom_screen .cat2{
     position: absolute;
-    width: 1920px;
+    width: 100%;
     height: 340px;
     margin-top: -100px;
     object-fit: cover;
+    z-index: 0;
+}
+main .bottom_screen #scroll_top{
+    position: relative;
+    z-index: 1;
+    margin: 179px 19px 19px 0;
+    padding: 13px 10px;
+    border-radius: 50px;
+    border: none;
 }
 .frame{
     display: flex;
     justify-content: space-between;
-    margin: 240px 320px 0;
+    margin: 0 320px 0;
 }
 .frame .logo{
     margin: 45px 0;
@@ -256,10 +249,10 @@ main .bottom_screen .main-footer img{
     padding: 0;
     margin: 58px 0 60px 0;
 }
-li{
+.frame .link li{
     display: flex;
     align-items: center;
-   margin-right: 20px;
+    margin-right: 20px;
     border-radius: 60px;
     background-color: #F29D52;
 }
@@ -311,7 +304,7 @@ li{
     margin: 38px 0 0 0;
     padding: 15px 29px;
     width: 183px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #img_grid {

@@ -10,13 +10,15 @@
 <body>
 <header>
     <section class="nav">
-        <a id="Logo" href=""><img class="hoduimg" src="Group.png" alt=""></a>
+        <a id="Logo" href=""><img class="hoduimg" src="Group.png" alt="호두 로고"></a>
         <nav class="navigation">
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Support</a>
-        </nav>
+            <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Support</a></li>
+            </ul>
             <a class="down" href="" download="">Download</a>
+        </nav>
     </section>
     <!--        네비게이션 부분 끝!-->
 </header>
@@ -29,12 +31,12 @@
             <a class="down" href="" download="">Download</a>
         </div>
         <div class="home-img">
-            <img src="img_cat.png" alt="cat">
+            <img src="img_cat.png" alt="상자 덮어쓴 고양이">
         </div>
     </section>
                    <!--        첫번째 홈화면 부분 완료!-->
     <section class="home-screen2">
-        <img class="home-img2" src="img_4.png" alt="">
+        <img class="home-img2" src="img_4.png" alt="침대 위 고양이">
         <div class="content">
             <h2 class="content-text">Lorem Ipsum is simply<br>dummy text of the printing<br>and dummy text</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. </p>
@@ -49,16 +51,16 @@
         </article>
                    <!--            서브 게시글 부분 완료!-->
         <article class="posts">
-             <img src="img_1.png" alt="">
-             <img src="img_2.png" alt="">
-             <img src="img_3.png" alt="">
-             <img src="img_1 (1).png" alt="">
-             <img src="img_2 (1).png" alt="">
-             <img src="img_3 (1).png" alt="">
+             <img src="img_1.png" alt="고양이1">
+             <img src="img_2.png" alt="고양이2">
+             <img src="img_3.png" alt="고양이3">
+             <img src="img_1 (1).png" alt="고양이4">
+             <img src="img_2 (1).png" alt="고양이5">
+             <img src="img_3 (1).png" alt="고양이6">
         </article>
              <div id="img_grid"></div>
              <h2 class="continue">Continue exploring HODU</h2>
-             <button class="click" onclick="fetchAndShowImages()">show more</button>
+             <button class="click">show more</button>
     </section>
                    <!--        무한 스크롤 부분 완료!-->
     <hr>
@@ -74,28 +76,29 @@
              </div>
              <div class="email">
                 <div class="input-group">
-                     <img src="mail.png"alt="">
-                     <input type="email" alt="" placeholder="Enter your e-mail address" >
+                     <img src="mail.png" alt="이메일 로고">
+                     <input type="email" alt="이메일을 입력해주세요" placeholder="Enter your e-mail address" >
                 </div>
                 <button class="click2">Subscribe</button>
              </div>
         </div>
-        <article class="main-footer img">
-             <img class="cat2" src="img_5.png" alt="">
-        </article>
+            <article class="main-footer">
+                <img class="cat2" src="img_5.png" alt="쳐다보는 고양이 사진">
+                <button id="scroll_top"><img src="Vector%20(2).png" alt="페이지의 맨 위로 올라가시겠습니까?"> </button>
+            </article>
     </section>
                    <!--        3번째 아래 홈화면 부분 완료!-->
     </main>
 <footer class="frame">
     <div>
-       <img class="logo" src="Group%20(1).png" alt="">
+       <img class="logo" src="Group%20(1).png" alt="호두 로고">
     </div>
     <nav class="link">
         <ul>
-           <li><a href=""><img src="Vector.png" alt="blog 이동"></a></li>
-           <li><a href=""><img src="instagram%20(1).png" alt="insta 이동"></a></li>
-           <li><a href=""><img src="Vector%20(1).png" alt="facebook 이동"></a></li>
-           <li><a href=""><img src="youtube.png" alt="youtube 이동"></a></li>
+           <li><a href="https://www.naver.com/" target="_blank"><img src="Vector.png" alt="blog 이동"></a></li>
+           <li><a href="https://www.instagram.com/" target="_blank"><img src="instagram%20(1).png" alt="insta 이동"></a></li>
+           <li><a href="https://www.facebook.com/" target="_blank"><img src="Vector%20(1).png" alt="facebook 이동"></a></li>
+           <li><a href="https://www.youtube.com/" target="_blank"><img src="youtube.png" alt="youtube 이동"></a></li>
         </ul>
     </nav>
 </footer>
@@ -110,16 +113,29 @@
         </article>
 </div>
                    <!--    모달창 완료!-->
+                   <!--페이지 맨위 버튼 시작-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scroll_top = document.getElementById('scroll_top');
+
+        scroll_top.addEventListener('click', () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+                <!--페이지 맨위 버튼 완료-->
                 <!--무한스크롤 자바스크립트 시작!-->
 <script>
-    const imgGrid = document.getElementById("img_grid");
-    const h2Continue = document.querySelector('.continue');
+    const imgGrid = document.getElementById('img_grid');
     let pageToFetch = 1;
-    let fetchingImages = false;
 
     async function fetchImages(pageNum) {
         try {
-            const response = await fetch(`https://picsum.photos/v2/list?page=${pageNum}&limit=30`);
+            const response = await fetch('https://picsum.photos/v2/list?page=' + pageNum + '&limit=6');
             if (!response.ok) {
                 throw new Error('네트워크 응답에 문제가 있습니다.');
             }
@@ -127,51 +143,26 @@
             const datas = await response.json();
             console.log(datas);
 
-            return datas;
+            showImages(datas);
 
         } catch (error) {
-            console.error('데이터를 가져오는데 문제가 발생했습니다:', error);
-            return [];
+            console.error('데이터를 가져오는데 문제가 발생했습니다 :', error);
         }
     }
 
-    function makeImageList(datas) {
+    function showImages(datas) {
         datas.forEach((item) => {
-            const img = document.createElement('img');
-            img.src = item.download_url;
-            img.alt = '';
-            imgGrid.appendChild(img);
+            const imgElement = document.createElement('img');
+            imgElement.src = item.download_url;
+            imgElement.alt = '';
+            imgGrid.appendChild(imgElement);
         });
     }
 
-    async function fetchAndShowImages() {
-        if (!fetchingImages) {
-            fetchingImages = true;
-            const datas = await fetchImages(pageToFetch++);
-            if (datas.length > 0) {
-                makeImageList(datas);
-                fetchingImages = false;
-            } else {
-                window.removeEventListener('scroll', handleScroll);
-                h2Continue.classList.remove('hidden');
-            }
-        }
-    }
-
-    function handleScroll() {
-        if (
-            window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight &&
-            !fetchingImages
-        ) {
-            fetchAndShowImages();
-        }
-    }
-
-    function initiateInfiniteScroll() {
-        window.addEventListener('scroll', handleScroll);
-        fetchAndShowImages();
-        document.body.style.overflowY = 'visible';
-    }
+    const showMoreButton = document.querySelector('.click');
+    showMoreButton.addEventListener('click', () => {
+        fetchImages(pageToFetch++);
+    });
 </script>
             <!--무한스크롤 자바스크립트 완료!-->
 
@@ -214,6 +205,5 @@
     marker.setMap(map);
 </script>
                    <!--카카오지도 자바스크립트 부분 완료!-->
-
 </body>
 </html>
