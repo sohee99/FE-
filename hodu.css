@@ -136,7 +136,7 @@ main .posts{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 72px;
-    margin: 100px;
+    margin-bottom: 100px;
 }
 main .home-screen2 .home-img2,
 main .posts img{
