@@ -50,12 +50,8 @@ table {
 body{
     font-family: Pretendard-Regular;
 }
-header .nav,
-main .home-screen{
-    display: flex;
-    align-items: center;
+header .nav, main .home-screen{
     background: #F2E9D8;
-    justify-content: center;
 }
 main .home-screen{
     gap: 170px;
@@ -65,11 +61,9 @@ header .nav{
     padding: 31px;
 }
 .navigation {
-    display: flex;
     gap: 49px;
 }
 .navigation ul{
-    display: flex;
     align-items: center;
     gap: 30px;
 }
@@ -77,10 +71,7 @@ header .nav{
     text-decoration: none;
     color: black;
 }
-.down,
-.click2,
-#modal .modal-thank_you button,
-.click{
+.down, .click2, #modal .modal-thank_you button, .click{
     background: #D97652;
     width: 76px;
     border: 0;
@@ -94,72 +85,60 @@ main .title{
     font-size: 48px;
     line-height: 60px;
 }
-main .title,
-main .home-screen p{
+main .title, main .home-screen p{
     margin-bottom:40px;
 }
 main .home-screen .down{
     display: inline-block;
 }
 main .home-screen2{
-    display: flex;
-    justify-content: center;
     gap: 110px;
-    align-items: center;
     margin: 80px 0 120px;
 }
 main .home-screen2 .content-text{
-    display: flex;
     flex-direction: column;
     font-size: 36px;
     line-height: 45px;
     margin-bottom: 30px;
 }
 main .post{
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 main .post-text .subject{
     font-size: 48px;
     line-height: 60px;
-    color: #D97652;
 }
 main .post-text p{
     text-align: center;
     margin: 40px 0 88px;
 }
-main .post-text span{
-    color: #D97652;
+main .posts {
+    margin-bottom: 100px;
 }
-main .posts{
+#img_grid, main .posts{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 72px;
-    margin-bottom: 100px;
 }
-main .home-screen2 .home-img2,
-main .posts img{
+main .home-screen2 .home-img2, main .posts img{
     border-radius: 30px;
     box-shadow:10px 10px 30px rgba(0,0,0,0.25);
 }
 main .post .continue{
     font-size: 24px;
     line-height: 30px;
-    margin: 0 0 28px;
 }
 main .post .click{
-    margin: 0 0 80px;
+    margin: 28px 0 80px;
     padding: 15px 29px;
     width: 143px;
     cursor: pointer;
 }
 main hr{
     width: 1278px;
-
 }
 main .bottom_screen{
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -177,7 +156,6 @@ main .bottom_screen #map{
     margin-bottom: 81px;
 }
 main .bottom_screen .email_bar{
-    display: flex;
     position: relative;
     z-index: 1;
     align-items: center;
@@ -188,7 +166,6 @@ main .bottom_screen .email_bar{
     gap: 163px;
 }
 main .bottom_screen h2{
-    margin: 0;
     font-size: 36px;
 }
 main .bottom_screen .email_text{
@@ -196,7 +173,6 @@ main .bottom_screen .email_text{
     margin: 18px 0 0;
 }
 main .bottom_screen .email{
-    display: flex;
     justify-content: space-between;
     width: 560px;
     background-color:#FFFFFF;
@@ -204,7 +180,6 @@ main .bottom_screen .email{
     height: 60px;
 }
 main .bottom_screen .email .input-group{
-    display: flex;
     align-items: center;
 }
 main .bottom_screen .email img{
@@ -220,7 +195,6 @@ main .bottom_screen .email input {
     color: #767676;
 }
 main .bottom_screen .main-footer{
-    display: flex;
     justify-content: center;
 }
 main .bottom_screen .cat2{
@@ -241,32 +215,24 @@ main .bottom_screen #scroll_top{
     right: -600px;
 }
 .frame{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 826px;
 }
 .frame .logo{
     margin: 45px 0;
 }
 .frame .link ul{
-    display: flex;
     align-items: center;
     list-style-type: none;
     padding: 0;
     margin: 58px 0 60px 0;
 }
 .frame .link li{
-    display: flex;
     align-items: center;
     margin-right: 20px;
     border-radius: 60px;
     background-color: #F29D52;
 }
 .frame .link ul li a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 42px;
     height: 42px;
 }
@@ -274,9 +240,6 @@ main .bottom_screen #scroll_top{
     display: none;
 }
 #modal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -297,34 +260,38 @@ main .bottom_screen #scroll_top{
     padding: 60px 245px 24px;
 }
 #modal .modal-thank_you h2{
-    margin: 0 0 12px;
-    color: #D97652;
+    margin-bottom:12px;
     font-size: 36px;
     line-height: 45px;
 }
 #modal .modal-thank_you p{
     font-size: 14px;
     line-height: 18px;
-    margin:0;
+    margin-bottom: 38px;
 }
 #modal .modal-thank_you button{
-    margin: 38px 0 0 0;
     padding: 15px 29px;
     width: 183px;
     font-size: 15px;
 }
-
-#img_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 72px;
-}
-
 #img_grid img {
     width: 378px;
     height: 378px;
     border-radius: 30px;
     box-shadow:10px 10px 30px rgba(0,0,0,0.25);
+}
+#modal .modal-thank_you h2, main .post-text .subject, main .post-text span{
+    color: #D97652;
+}
+header .nav, main .home-screen, main .home-screen2, .frame, .frame .link ul li a, #modal{
+    align-items: center;
+    justify-content: center;
+}
+header .nav, main .home-screen, .navigation,.navigation ul, main .home-screen2 .content-text,
+main .post,main .home-screen2, main .bottom_screen, #modal, .frame .link ul li a,
+.frame,.frame .link ul, main .bottom_screen .main-footer, main .bottom_screen .email .input-group,
+main .bottom_screen .email, main .bottom_screen .email_bar{
+    display: flex;
 }
 @font-face{
     font-family: 'Pretendard-Regular';
